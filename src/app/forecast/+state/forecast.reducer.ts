@@ -26,6 +26,7 @@ export const initialForecastState: ForecastState = {
 const reducer = createReducer(
   initialForecastState,
   on(ForecastActions.initForecast, (state) => ({
+    ...state,
     city: null,
     forecast: [],
     loading: false,
