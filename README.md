@@ -17,6 +17,7 @@ Features:
 - api service
 - adapter service
 - component architecture
+- reactive programming
 - accessibility
 - responsive design
 - unit tests
