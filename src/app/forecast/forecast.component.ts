@@ -14,9 +14,10 @@ export class ForecastComponent implements OnInit {
   constructor(private state: ForecastComponentStateService) {}
 
   ngOnInit(): void {
-    // this.weather.getFiveDayForecast('Birmingham').subscribe((res) => {
-    //   console.log(this.adapt.adaptWeatherApiToForecastState(res));
-    // });
     this.state.init();
+  }
+
+  getForecast(city: string) {
+    this.state.getForecast(city);
   }
 }

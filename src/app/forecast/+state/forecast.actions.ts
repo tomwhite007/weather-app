@@ -3,6 +3,11 @@ import { ForecastElement } from './forecast.models';
 
 export const initForecast = createAction('[Forecast Page] Init');
 
+export const loadForecast = createAction(
+  '[Forecast/API] Load Forecast',
+  props<{ city: string }>()
+);
+
 export const loadForecastSuccess = createAction(
   '[Forecast/API] Load Forecast Success',
   props<{ forecast: ForecastElement[] }>()

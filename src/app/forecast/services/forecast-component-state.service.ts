@@ -8,4 +8,8 @@ export class ForecastComponentStateService {
   init() {
     this.facade.init();
   }
+
+  getForecast(city: string) {
+    this.facade.getForecast(city);
+  }
 }

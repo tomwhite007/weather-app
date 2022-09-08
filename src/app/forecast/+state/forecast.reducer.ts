@@ -33,7 +33,12 @@ const reducer = createReducer(
     loaded: false,
     error: null,
   })),
-  // TODO: add loadForecast action here
+  on(ForecastActions.loadForecast, (state, { city }) => ({
+    ...state,
+    city,
+    loading: true,
+    loaded: false,
+  })),
   on(ForecastActions.loadForecastSuccess, (state, { forecast }) => ({
     ...state,
     forecast,
