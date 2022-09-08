@@ -11,15 +11,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Assumption: midday forecasts (from three hour forecasts array) is best to describe the day's weather. This is because requirements use singular form to show forecast for the day.
 
 Features:
-state - NgRx
-local state service for container
-api service
-adapter service
 
-component architecture
-accessibility
-responsive design
-unit tests
-svg spritesheet
-spinner
-error / no forecast messages
+- state - NgRx
+- local state service for container
+- api service
+- adapter service
+- component architecture
+- accessibility
+- responsive design
+- unit tests
+- svg spritesheet
+- spinner
+- error / no forecast messages
