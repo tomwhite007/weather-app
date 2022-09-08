@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -24,11 +23,6 @@ import { EffectsModule } from '@ngrx/effects';
     ),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
-    // StoreModule.forFeature(
-    //   fromWeather.WEATHER_FEATURE_KEY,
-    //   fromWeather.reducer
-    // ),
-    // EffectsModule.forFeature([WeatherEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
