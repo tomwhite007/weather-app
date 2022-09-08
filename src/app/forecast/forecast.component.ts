@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ForecastAdapterService } from './services/forecast-adapter.service';
+import { WeatherApiService } from './services/weather-api.service';
 
 @Component({
   selector: 'app-forecast',
@@ -7,7 +9,14 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ForecastComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private weather: WeatherApiService,
+    private adapt: ForecastAdapterService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.weather.getFiveDayForecast('Birmingham').subscribe((res) => {
+      console.log(this.adapt.adaptWeatherApiToForecastState(res));
+    });
+  }
 }
