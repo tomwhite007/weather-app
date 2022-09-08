@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
+import { SharedUiModule } from '../shared/ui/shared-ui/shared-ui.module';
 
 @NgModule({
   declarations: [ForecastComponent],
@@ -18,6 +19,7 @@ import * as fromForecast from './+state/forecast.reducer';
       fromForecast.forecastReducer
     ),
     EffectsModule.forFeature([ForecastEffects]),
+    SharedUiModule,
   ],
 })
 export class ForecastModule {}
