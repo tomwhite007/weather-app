@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## About
 
-Assumption: midday forecasts (from three hour forecasts array) is best to describe the day's weather. This is because requirements use singular form to show forecast for the day.
+Assumption: midday forecasts (from three hour forecasts array) are best to describe the day's weather. This is because requirements use singular form to show forecast for the day.
 
 Features:
 

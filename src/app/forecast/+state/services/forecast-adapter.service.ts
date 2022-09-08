@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ForecastElement } from '../+state/forecast.models';
-import { FiveDayForecastApiResult } from '../models/five-day-forecast-api-result';
+import { ForecastElement } from '../forecast.models';
+import { FiveDayForecastApiResult } from './models/five-day-forecast-api-result';
 
 @Injectable({
   providedIn: 'any',

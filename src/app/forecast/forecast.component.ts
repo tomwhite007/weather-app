@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ForecastAdapterService } from './services/forecast-adapter.service';
-import { WeatherApiService } from './services/weather-api.service';
+import { ForecastAdapterService } from './+state/services/forecast-adapter.service';
+import { WeatherApiService } from './+state/services/weather-api.service';
 
 @Component({
   selector: 'app-forecast',
