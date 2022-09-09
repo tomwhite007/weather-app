@@ -163,8 +163,24 @@ a:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}
+@media (max-width: 767px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .card-container > *:not(.circle-link),
   .terminal {
     width: 100%;

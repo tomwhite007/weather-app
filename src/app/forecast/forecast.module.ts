@@ -7,8 +7,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
-import { SharedUiModule } from '../shared/ui/shared-ui.module';
 import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-day-forecast-table.component';
+import { SharedUiModule } from '../shared/ui/shared-ui.module';
 
 @NgModule({
   declarations: [ForecastComponent, FiveDayForecastTableComponent],

@@ -27,7 +27,7 @@ export class ForecastAdapterService {
           isoDate: f.dt_txt,
           day: this.daysOfTheWeek[new Date(f.dt).getDay()],
           temperature: f.main.temp,
-          windspeed: f.wind.speed,
+          windspeed: f.wind.speed * 2.237, // m/s converted to mph
           weatherDescription: f.weather[0].description,
           weatherIcon: f.weather[0].icon,
         }))
