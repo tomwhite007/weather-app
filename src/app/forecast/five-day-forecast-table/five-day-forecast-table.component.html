@@ -4,9 +4,9 @@
   <thead>
     <tr>
       <th *ngFor="let col of columns | filterNonColumns">
-        <app-forecast-table-header-cell
+        <app-forecast-header-cell
           [heading]="table[0][col]"
-        ></app-forecast-table-header-cell>
+        ></app-forecast-header-cell>
       </th>
     </tr>
   </thead>

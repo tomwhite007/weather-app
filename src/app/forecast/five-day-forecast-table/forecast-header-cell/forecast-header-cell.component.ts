@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-forecast-table-header-cell',
-  templateUrl: './forecast-table-header-cell.component.html',
-  styleUrls: ['./forecast-table-header-cell.component.scss'],
+  selector: 'app-forecast-header-cell',
+  templateUrl: './forecast-header-cell.component.html',
+  styleUrls: ['./forecast-header-cell.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ForecastTableHeaderCellComponent {
+export class ForecastHeaderCellComponent {
   @Input()
   set heading(value: string | undefined) {
     if (!value) return;

@@ -9,7 +9,7 @@ import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
 import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-day-forecast-table.component';
 import { SharedUiModule } from '../shared/ui/shared-ui.module';
-import { ForecastTableHeaderCellComponent } from './five-day-forecast-table/forecast-table-header-cell/forecast-table-header-cell.component';
+import { ForecastHeaderCellComponent } from './five-day-forecast-table/forecast-header-cell/forecast-header-cell.component';
 import { FilterNonColumnsPipe } from './five-day-forecast-table/filter-non-columns/filter-non-columns.pipe';
 import { ForecastRowComponent } from './five-day-forecast-table/forecast-row/forecast-row.component';
 
@@ -17,7 +17,7 @@ import { ForecastRowComponent } from './five-day-forecast-table/forecast-row/for
   declarations: [
     ForecastComponent,
     FiveDayForecastTableComponent,
-    ForecastTableHeaderCellComponent,
+    ForecastHeaderCellComponent,
     FilterNonColumnsPipe,
     ForecastRowComponent,
   ],
