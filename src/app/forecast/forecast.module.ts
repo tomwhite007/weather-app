@@ -8,9 +8,10 @@ import { StoreModule } from '@ngrx/store';
 import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
 import { SharedUiModule } from '../shared/ui/shared-ui.module';
+import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-day-forecast-table.component';
 
 @NgModule({
-  declarations: [ForecastComponent],
+  declarations: [ForecastComponent, FiveDayForecastTableComponent],
   imports: [
     CommonModule,
     ForecastRoutingModule,
