@@ -7,6 +7,10 @@ export class ForecastComponentStateService {
 
   init() {
     this.facade.init();
+
+    this.facade.forecastTableViewModel$.subscribe((res) => {
+      console.log(res);
+    });
   }
 
   getForecast(city: string) {

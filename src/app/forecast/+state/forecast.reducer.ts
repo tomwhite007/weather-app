@@ -38,6 +38,7 @@ const reducer = createReducer(
     city,
     loading: true,
     loaded: false,
+    error: null,
   })),
   on(ForecastActions.loadForecastSuccess, (state, { forecast }) => ({
     ...state,

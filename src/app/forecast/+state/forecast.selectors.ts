@@ -20,7 +20,32 @@ export const getForecast = createSelector(
   (state: ForecastState) => state.forecast
 );
 
-export const getForecastTableViewModel = createSelector(
-  getForecastState,
-  (state: ForecastState) => state.forecast.map((row) => row.day)
-);
+export const getForecastTableViewModel = (iconUrl: string) =>
+  createSelector(getForecastState, (state: ForecastState) => ({
+    columns: ['name', ...state.forecast.map((row) => row.id)],
+    table: [
+      { name: null, ...state.forecast.map((row) => ({ [row.id]: row.day })) },
+      {
+        name: { desktop: 'Temperature (°C)', mobile: '°C' },
+        ...state.forecast.map((row) => ({ [row.id]: row.temperature })),
+      },
+      {
+        name: { desktop: 'Windspeed (mph)', mobile: 'Wind mph' },
+        ...state.forecast.map((row) => ({ [row.id]: row.windspeed })),
+      },
+      {
+        name: { desktop: 'Weather', mobile: '' },
+        ...state.forecast.map((row) => ({ [row.id]: row.windspeed })),
+      },
+      {
+        name: null,
+        ...state.forecast.map((row) => ({
+          [row.id]: iconUrl.replace('{icon}', row.weatherIcon),
+        })),
+      },
+    ],
+    message: state.loaded
+      ? null
+      : state.error ?? 'Select a City above to see a five day forecast',
+    loading: state.loading,
+  }));
