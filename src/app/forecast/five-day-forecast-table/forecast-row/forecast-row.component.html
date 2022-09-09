@@ -1,9 +1,20 @@
-<td class="heading">
-  <span class="desktop">Temperature (°C)</span
-  ><span class="mobile" aria-hidden="true">°C</span>
-</td>
-<td>20</td>
-<td>20</td>
-<td>20</td>
-<td>20</td>
-<td>20</td>
+<ng-container *ngFor="let col of cols | filterNonColumns">
+  <td *ngIf="col !== 'nameDesktop'; else heading">
+    <ng-container *ngIf="row.type !== 'icon'; else icon">
+      {{ row[col] }}
+    </ng-container>
+  </td>
+
+  <ng-template #icon>
+    <td>
+      <img [src]="row[col]" />
+    </td>
+  </ng-template>
+</ng-container>
+
+<ng-template #heading>
+  <td class="heading">
+    <span class="desktop">{{ row.nameDesktop }}</span
+    ><span class="mobile" aria-hidden="true">{{ row.nameMobile }}</span>
+  </td>
+</ng-template>
