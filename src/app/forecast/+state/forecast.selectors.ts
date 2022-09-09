@@ -29,6 +29,7 @@ export const getForecastTableViewModel = (iconUrl: string) =>
   createSelector(
     getForecastState,
     (state: ForecastState): ForecastTableViewmodel => ({
+      city: state.city ?? '',
       columns: [
         'nameDesktop',
         'nameMobile',

@@ -17,6 +17,7 @@ export interface ForecastTableRow {
 }
 
 export interface ForecastTableViewmodel {
+  city: string;
   columns: string[];
   table: ForecastTableRow[];
   message: string | null;

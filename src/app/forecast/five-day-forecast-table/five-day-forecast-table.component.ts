@@ -10,4 +10,5 @@ import { ForecastTableViewmodel } from '../+state/forecast.models';
 export class FiveDayForecastTableComponent {
   @Input() columns!: ForecastTableViewmodel['columns'];
   @Input() table!: ForecastTableViewmodel['table'];
+  @Input() city!: string;
 }
