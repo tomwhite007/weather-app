@@ -37,7 +37,7 @@ describe('Forecast Selectors', () => {
 
   describe('Forecast Selectors', () => {
     it('getAllForecast() should return the list of Forecast', () => {
-      const results = ForecastSelectors.getAllForecast(state);
+      const results = ForecastSelectors.getForecast(state);
       const selId = getForecastId(results[1]);
 
       expect(results.length).toBe(3);

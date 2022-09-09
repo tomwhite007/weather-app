@@ -15,7 +15,12 @@ export const getForecastError = createSelector(
   (state: ForecastState) => state.error
 );
 
-export const getAllForecast = createSelector(
+export const getForecast = createSelector(
   getForecastState,
   (state: ForecastState) => state.forecast
+);
+
+export const getForecastTableViewModel = createSelector(
+  getForecastState,
+  (state: ForecastState) => state.forecast.map((row) => row.day)
 );
