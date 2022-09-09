@@ -22,5 +22,4 @@ Features:
 - responsive design
 - unit tests
 - svg spritesheet
-- spinner
 - error / no forecast messages
