@@ -5,7 +5,7 @@
     <tr>
       <th *ngFor="let col of columns | filterNonColumns">
         <app-forecast-header-cell
-          [heading]="table[0][col]"
+          [heading]="heading[col]"
         ></app-forecast-header-cell>
       </th>
     </tr>
@@ -13,7 +13,7 @@
 
   <tbody>
     <tr
-      *ngFor="let row of table; let i = index"
+      *ngFor="let row of rows; let i = index"
       appForecastRow
       [row]="row"
       [cols]="columns"
