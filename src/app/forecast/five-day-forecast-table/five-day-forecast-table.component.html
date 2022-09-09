@@ -3,6 +3,32 @@
 <table aria-label="Five day forecast information">
   <thead>
     <tr>
+      <th *ngFor="let col of columns | filterNonColumns">
+        <app-forecast-table-header-cell
+          [heading]="table[0][col]"
+        ></app-forecast-table-header-cell>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="heading">
+        <span class="desktop">Temperature (°C)</span
+        ><span class="mobile" aria-hidden="true">°C</span>
+      </td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+
+<table aria-label="Five day forecast information">
+  <thead>
+    <tr>
       <th></th>
       <th>
         <span class="desktop">Monday</span

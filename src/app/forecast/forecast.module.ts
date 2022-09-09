@@ -9,9 +9,16 @@ import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
 import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-day-forecast-table.component';
 import { SharedUiModule } from '../shared/ui/shared-ui.module';
+import { ForecastTableHeaderCellComponent } from './five-day-forecast-table/forecast-table-header-cell/forecast-table-header-cell.component';
+import { FilterNonColumnsPipe } from './five-day-forecast-table/forecast-table-header-cell/filter-non-columns/filter-non-columns.pipe';
 
 @NgModule({
-  declarations: [ForecastComponent, FiveDayForecastTableComponent],
+  declarations: [
+    ForecastComponent,
+    FiveDayForecastTableComponent,
+    ForecastTableHeaderCellComponent,
+    FilterNonColumnsPipe,
+  ],
   imports: [
     CommonModule,
     ForecastRoutingModule,
