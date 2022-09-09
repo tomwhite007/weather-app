@@ -5,10 +5,15 @@
   </svg>
 
   <form>
-    <label for="city-select">City Selector:</label>
-    <select id="city-select" name="city-select">
-      <option>Choose a City</option>
-      <option *ngFor="let opt; in: options">{{ opt }}</option>
+    <label for="city-select">City:</label>
+    <select
+      id="city-select"
+      name="city-select"
+      [(ngModel)]="val"
+      (ngModelChange)="handleSelect()"
+    >
+      <option value="">Choose a City</option>
+      <option *ngFor="let opt of options" [ngValue]="opt">{{ opt }}</option>
     </select>
   </form>
 </div>

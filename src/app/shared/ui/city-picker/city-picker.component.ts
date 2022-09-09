@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-city-picker',
@@ -8,4 +14,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class CityPickerComponent {
   @Input() options?: string[];
+  @Output() selected = new EventEmitter<string>();
+
+  val = '';
+
+  handleSelect() {
+    this.selected.emit(this.val);
+  }
 }
