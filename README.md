@@ -12,6 +12,7 @@ Assumption: midday forecasts (from three hour forecasts array) are best to descr
 
 Features:
 
+- strict
 - state - NgRx
 - local state service for container
 - api service

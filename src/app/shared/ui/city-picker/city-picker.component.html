@@ -4,5 +4,11 @@
     <use href="#icon-location"></use>
   </svg>
 
-  <span>City Picker</span>
+  <form>
+    <label for="city-select">City Selector:</label>
+    <select id="city-select" name="city-select">
+      <option>Choose a City</option>
+      <option *ngFor="let opt; in: options">{{ opt }}</option>
+    </select>
+  </form>
 </div>

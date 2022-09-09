@@ -1,5 +1,19 @@
+.card {
+  padding: 20px 20px 30px 72px;
+}
+
 .icon-location {
-  width: 70px;
+  width: 80px;
   position: absolute;
-  left: -10px;
+  left: -27px;
+  bottom: -43px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  select {
+    padding: 3px;
+    font-weight: 600;
+  }
 }
