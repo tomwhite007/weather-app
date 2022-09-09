@@ -24,11 +24,11 @@ export class ForecastAdapterService {
         // assume midday forecast is best to describe the day's weather
         .filter((f) => f.dt_txt.endsWith(' 12:00:00'))
         .map((f, i) => ({
-          id: i,
+          id: i.toString(),
           isoDate: f.dt_txt,
           day: this.daysOfTheWeek[new Date(f.dt_txt).getDay()],
-          temperature: f.main.temp,
-          windspeed: Math.round(f.wind.speed * 2.237), // m/s converted to mph
+          temperature: f.main.temp.toString(),
+          windspeed: Math.round(f.wind.speed * 2.237).toString(), // m/s converted to mph
           weatherDescription: f.weather[0].description,
           weatherIcon: f.weather[0].icon,
           weatherShortText: f.weather[0].main,

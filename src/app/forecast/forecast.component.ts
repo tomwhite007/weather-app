@@ -11,6 +11,7 @@ import { ForecastComponentStateService } from './services/forecast-component-sta
 })
 export class ForecastComponent implements OnInit {
   cityPickerOptions = environment.cities;
+  vm$ = this.state.vm$;
 
   constructor(private state: ForecastComponentStateService) {}
 

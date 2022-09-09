@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ObservableInput } from 'rxjs';
 import { ForecastFacade } from '../+state/forecast.facade';
 
 @Injectable()
 export class ForecastComponentStateService {
+  vm$ = this.facade.forecastTableViewModel$;
+
   constructor(private facade: ForecastFacade) {}
 
   init() {

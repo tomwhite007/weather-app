@@ -1,16 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ForecastTableRowViewmodel } from '../+state/forecast.models';
 
 @Component({
   selector: 'app-five-day-forecast-table',
   templateUrl: './five-day-forecast-table.component.html',
   styleUrls: ['./five-day-forecast-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FiveDayForecastTableComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class FiveDayForecastTableComponent {
+  @Input() columns!: ForecastTableRowViewmodel['columns'];
+  @Input() table!: ForecastTableRowViewmodel['table'];
 }

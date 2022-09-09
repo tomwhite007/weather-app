@@ -1,10 +1,23 @@
 export interface ForecastElement {
-  id: number;
+  id: string;
   isoDate: string;
   day: string;
-  temperature: number;
-  windspeed: number;
+  temperature: string;
+  windspeed: string;
   weatherDescription: string;
   weatherIcon: string;
   weatherShortText: string;
+}
+
+export interface ForecastTableRow {
+  type: string;
+  nameDesktop?: string;
+  nameMobile?: string;
+  [key: string]: string | undefined;
+}
+
+export interface ForecastTableRowViewmodel {
+  columns: string[];
+  table: ForecastTableRow[];
+  message: string | null;
 }

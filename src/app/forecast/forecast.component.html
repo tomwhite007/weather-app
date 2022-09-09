@@ -3,4 +3,16 @@
   (selected)="getForecast($event)"
 ></app-city-picker>
 
-<app-five-day-forecast-table></app-five-day-forecast-table>
+<ng-container *ngIf="vm$ | async as vm">
+  <app-five-day-forecast-table
+    *ngIf="!vm.message; else message"
+    [columns]="vm.columns"
+    [table]="vm.table"
+  ></app-five-day-forecast-table>
+
+  <ng-template #message>
+    <div class="message-container">
+      <span>{{ vm.message }}</span>
+    </div>
+  </ng-template>
+</ng-container>
