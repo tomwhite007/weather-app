@@ -11,6 +11,7 @@ import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-da
 import { SharedUiModule } from '../shared/ui/shared-ui.module';
 import { ForecastTableHeaderCellComponent } from './five-day-forecast-table/forecast-table-header-cell/forecast-table-header-cell.component';
 import { FilterNonColumnsPipe } from './five-day-forecast-table/filter-non-columns/filter-non-columns.pipe';
+import { ForecastRowComponent } from './five-day-forecast-table/forecast-row/forecast-row.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FilterNonColumnsPipe } from './five-day-forecast-table/filter-non-colum
     FiveDayForecastTableComponent,
     ForecastTableHeaderCellComponent,
     FilterNonColumnsPipe,
+    ForecastRowComponent,
   ],
   imports: [
     CommonModule,

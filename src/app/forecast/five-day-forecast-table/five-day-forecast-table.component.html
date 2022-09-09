@@ -12,17 +12,13 @@
   </thead>
 
   <tbody>
-    <tr>
-      <td class="heading">
-        <span class="desktop">Temperature (°C)</span
-        ><span class="mobile" aria-hidden="true">°C</span>
-      </td>
-      <td>20</td>
-      <td>20</td>
-      <td>20</td>
-      <td>20</td>
-      <td>20</td>
-    </tr>
+    <tr
+      *ngFor="let row of table; let i = index"
+      appForecastRow
+      [row]="row"
+      [cols]="columns"
+      [rowIdx]="i"
+    ></tr>
   </tbody>
 </table>
 

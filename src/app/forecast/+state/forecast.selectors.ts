@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   ForecastElement,
   ForecastTableRow,
-  ForecastTableRowViewmodel,
+  ForecastTableViewmodel,
 } from './forecast.models';
 import { FORECAST_FEATURE_KEY, ForecastState } from './forecast.reducer';
 
@@ -28,7 +28,7 @@ export const getForecast = createSelector(
 export const getForecastTableViewModel = (iconUrl: string) =>
   createSelector(
     getForecastState,
-    (state: ForecastState): ForecastTableRowViewmodel => ({
+    (state: ForecastState): ForecastTableViewmodel => ({
       columns: [
         'nameDesktop',
         'nameMobile',

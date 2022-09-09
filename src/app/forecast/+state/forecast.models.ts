@@ -16,7 +16,7 @@ export interface ForecastTableRow {
   [key: string]: string | undefined;
 }
 
-export interface ForecastTableRowViewmodel {
+export interface ForecastTableViewmodel {
   columns: string[];
   table: ForecastTableRow[];
   message: string | null;

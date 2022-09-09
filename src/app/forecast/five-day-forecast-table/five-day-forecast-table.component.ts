@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ForecastTableRowViewmodel } from '../+state/forecast.models';
+import { ForecastTableViewmodel } from '../+state/forecast.models';
 
 @Component({
   selector: 'app-five-day-forecast-table',
@@ -8,6 +8,6 @@ import { ForecastTableRowViewmodel } from '../+state/forecast.models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FiveDayForecastTableComponent {
-  @Input() columns!: ForecastTableRowViewmodel['columns'];
-  @Input() table!: ForecastTableRowViewmodel['table'];
+  @Input() columns!: ForecastTableViewmodel['columns'];
+  @Input() table!: ForecastTableViewmodel['table'];
 }
