@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ForecastAdapterService } from './+state/services/forecast-adapter.service';
-import { WeatherApiService } from './+state/services/weather-api.service';
+import { environment } from 'src/environments/environment';
 import { ForecastComponentStateService } from './services/forecast-component-state.service';
 
 @Component({
@@ -11,6 +10,8 @@ import { ForecastComponentStateService } from './services/forecast-component-sta
   providers: [ForecastComponentStateService],
 })
 export class ForecastComponent implements OnInit {
+  cityPickerOptions = environment.cities;
+
   constructor(private state: ForecastComponentStateService) {}
 
   ngOnInit(): void {

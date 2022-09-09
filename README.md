@@ -16,7 +16,8 @@ Features:
 - local state service for container
 - api service
 - adapter service
-- component architecture
+- component architecture; container-presenter
+- reactive programming
 - accessibility
 - responsive design
 - unit tests
