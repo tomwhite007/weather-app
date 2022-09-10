@@ -19,6 +19,7 @@ export class ForecastFacade {
   }
 
   getForecast(city: string) {
+    if (!city) return this.init();
     this.store.dispatch(ForecastActions.loadForecast({ city }));
   }
 }
