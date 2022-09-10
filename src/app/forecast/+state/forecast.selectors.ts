@@ -21,21 +21,20 @@ export const getForecast = createSelector(
   (state: ForecastState) => state.forecast
 );
 
-export const getForecastTableViewModel = (iconUrl: string) =>
-  createSelector(
-    getForecastState,
-    (state: ForecastState): ForecastTableViewmodel => ({
-      city: state.city ?? '',
-      forecast: state.forecast,
-      message: state.loading
-        ? 'Loading'
-        : state.loaded
-        ? null
-        : state.error
-        ? 'Oops. There was an error getting the forecast.'
-        : 'Select a City above to see a five day forecast',
-    })
-  );
+export const getForecastTableViewModel = createSelector(
+  getForecastState,
+  (state: ForecastState): ForecastTableViewmodel => ({
+    city: state.city ?? '',
+    forecast: state.forecast,
+    message: state.loading
+      ? 'Loading'
+      : state.loaded
+      ? null
+      : state.error
+      ? 'Oops. There was an error getting the forecast.'
+      : 'Select a City above to see a five day forecast',
+  })
+);
 
 function convertColumn(
   rows: ForecastElement[],

@@ -20,8 +20,8 @@ describe('Forecast Reducer', () => {
         action
       );
 
-      expect(result.loaded).toBe(true);
-      expect(result.forecast).toBe(mockAdaptedForecastTableDef);
+      expect(result.loaded).toEqual(true);
+      expect(result.forecast).toEqual(mockAdaptedForecastTableDef);
     });
   });
 
