@@ -25,10 +25,6 @@ const readFirst = (stream$: Observable<any>) => firstValueFrom(stream$);
 describe('ForecastFacade', () => {
   let facade: ForecastFacade;
   let store: Store<TestSchema>;
-  const createForecastEntity = (id: string, name = ''): ForecastElement => ({
-    id,
-    name: name || `name-${id}`,
-  });
 
   describe('used in NgModule', () => {
     beforeEach(() => {
@@ -84,11 +80,7 @@ describe('ForecastFacade', () => {
       expect(list.length).toBe(0);
       expect(isLoaded).toBe(false);
 
-      store.dispatch(
-        ForecastActions.loadForecastSuccess({
-          forecast: [createForecastEntity('AAA'), createForecastEntity('BBB')],
-        })
-      );
+      store.dispatch(ForecastActions.loadForecastSuccess({}));
 
       list = await readFirst(facade.forecast$);
       isLoaded = await readFirst(facade.loaded$);

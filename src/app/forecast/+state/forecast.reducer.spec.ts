@@ -9,17 +9,8 @@ import {
 } from './forecast.reducer';
 
 describe('Forecast Reducer', () => {
-  const createForecastEntity = (id: string, name = ''): ForecastElement => ({
-    id,
-    name: name || `name-${id}`,
-  });
-
   describe('valid Forecast actions', () => {
     it('loadForecastSuccess should return the list of known Forecast', () => {
-      const forecast = [
-        createForecastEntity('PRODUCT-AAA'),
-        createForecastEntity('PRODUCT-zzz'),
-      ];
       const action = ForecastActions.loadForecastSuccess({ forecast });
 
       const result: ForecastState = forecastReducer(
