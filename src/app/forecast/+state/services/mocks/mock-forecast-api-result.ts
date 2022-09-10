@@ -1,0 +1,1492 @@
+import { FiveDayForecastApiResult } from '../models/five-day-forecast-api-result';
+
+export const mockForecastApiResult: FiveDayForecastApiResult = {
+  cod: '200',
+  message: 0,
+  cnt: 40,
+  list: [
+    {
+      dt: 1662832800,
+      main: {
+        temp: 19.92,
+        feels_like: 19.77,
+        temp_min: 18.51,
+        temp_max: 19.92,
+        pressure: 1016,
+        sea_level: 1016,
+        grnd_level: 1014,
+        humidity: 69,
+        temp_kf: 1.41,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 99,
+      },
+      wind: {
+        speed: 1.57,
+        deg: 347,
+        gust: 3.26,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-10 18:00:00',
+    },
+    {
+      dt: 1662843600,
+      main: {
+        temp: 18,
+        feels_like: 17.81,
+        temp_min: 16.69,
+        temp_max: 18,
+        pressure: 1017,
+        sea_level: 1017,
+        grnd_level: 1015,
+        humidity: 75,
+        temp_kf: 1.31,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 53,
+      },
+      wind: {
+        speed: 1.31,
+        deg: 350,
+        gust: 1.76,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-10 21:00:00',
+    },
+    {
+      dt: 1662854400,
+      main: {
+        temp: 16.1,
+        feels_like: 15.85,
+        temp_min: 16.1,
+        temp_max: 16.1,
+        pressure: 1019,
+        sea_level: 1019,
+        grnd_level: 1016,
+        humidity: 80,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 802,
+          main: 'Clouds',
+          description: 'scattered clouds',
+          icon: '03n',
+        },
+      ],
+      clouds: {
+        all: 25,
+      },
+      wind: {
+        speed: 0.32,
+        deg: 350,
+        gust: 0.49,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-11 00:00:00',
+    },
+    {
+      dt: 1662865200,
+      main: {
+        temp: 15.37,
+        feels_like: 15.13,
+        temp_min: 15.37,
+        temp_max: 15.37,
+        pressure: 1019,
+        sea_level: 1019,
+        grnd_level: 1016,
+        humidity: 83,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 802,
+          main: 'Clouds',
+          description: 'scattered clouds',
+          icon: '03n',
+        },
+      ],
+      clouds: {
+        all: 40,
+      },
+      wind: {
+        speed: 0.66,
+        deg: 88,
+        gust: 0.75,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-11 03:00:00',
+    },
+    {
+      dt: 1662876000,
+      main: {
+        temp: 15.09,
+        feels_like: 14.9,
+        temp_min: 15.09,
+        temp_max: 15.09,
+        pressure: 1019,
+        sea_level: 1019,
+        grnd_level: 1016,
+        humidity: 86,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 802,
+          main: 'Clouds',
+          description: 'scattered clouds',
+          icon: '03d',
+        },
+      ],
+      clouds: {
+        all: 41,
+      },
+      wind: {
+        speed: 1.59,
+        deg: 104,
+        gust: 2.21,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-11 06:00:00',
+    },
+    {
+      dt: 1662886800,
+      main: {
+        temp: 19.11,
+        feels_like: 18.83,
+        temp_min: 19.11,
+        temp_max: 19.11,
+        pressure: 1019,
+        sea_level: 1019,
+        grnd_level: 1016,
+        humidity: 67,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 54,
+      },
+      wind: {
+        speed: 1.77,
+        deg: 129,
+        gust: 2.77,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-11 09:00:00',
+    },
+    {
+      dt: 1662897600,
+      main: {
+        temp: 22.55,
+        feels_like: 22.09,
+        temp_min: 22.55,
+        temp_max: 22.55,
+        pressure: 1018,
+        sea_level: 1018,
+        grnd_level: 1015,
+        humidity: 47,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 53,
+      },
+      wind: {
+        speed: 2.29,
+        deg: 177,
+        gust: 3.22,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-11 12:00:00',
+    },
+    {
+      dt: 1662908400,
+      main: {
+        temp: 21.81,
+        feels_like: 21.43,
+        temp_min: 21.81,
+        temp_max: 21.81,
+        pressure: 1017,
+        sea_level: 1017,
+        grnd_level: 1014,
+        humidity: 53,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 81,
+      },
+      wind: {
+        speed: 3.36,
+        deg: 173,
+        gust: 3.68,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-11 15:00:00',
+    },
+    {
+      dt: 1662919200,
+      main: {
+        temp: 20.13,
+        feels_like: 19.79,
+        temp_min: 20.13,
+        temp_max: 20.13,
+        pressure: 1016,
+        sea_level: 1016,
+        grnd_level: 1013,
+        humidity: 61,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 90,
+      },
+      wind: {
+        speed: 2.37,
+        deg: 180,
+        gust: 4.5,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-11 18:00:00',
+    },
+    {
+      dt: 1662930000,
+      main: {
+        temp: 17.94,
+        feels_like: 17.62,
+        temp_min: 17.94,
+        temp_max: 17.94,
+        pressure: 1015,
+        sea_level: 1015,
+        grnd_level: 1012,
+        humidity: 70,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.14,
+        deg: 148,
+        gust: 5.47,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-11 21:00:00',
+    },
+    {
+      dt: 1662940800,
+      main: {
+        temp: 16.5,
+        feels_like: 16.19,
+        temp_min: 16.5,
+        temp_max: 16.5,
+        pressure: 1014,
+        sea_level: 1014,
+        grnd_level: 1011,
+        humidity: 76,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 99,
+      },
+      wind: {
+        speed: 1.7,
+        deg: 141,
+        gust: 6.06,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-12 00:00:00',
+    },
+    {
+      dt: 1662951600,
+      main: {
+        temp: 15.89,
+        feels_like: 15.68,
+        temp_min: 15.89,
+        temp_max: 15.89,
+        pressure: 1013,
+        sea_level: 1013,
+        grnd_level: 1010,
+        humidity: 82,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 802,
+          main: 'Clouds',
+          description: 'scattered clouds',
+          icon: '03n',
+        },
+      ],
+      clouds: {
+        all: 35,
+      },
+      wind: {
+        speed: 0.98,
+        deg: 170,
+        gust: 1,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-12 03:00:00',
+    },
+    {
+      dt: 1662962400,
+      main: {
+        temp: 15.84,
+        feels_like: 15.59,
+        temp_min: 15.84,
+        temp_max: 15.84,
+        pressure: 1012,
+        sea_level: 1012,
+        grnd_level: 1009,
+        humidity: 81,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 56,
+      },
+      wind: {
+        speed: 1.12,
+        deg: 180,
+        gust: 1.21,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-12 06:00:00',
+    },
+    {
+      dt: 1662973200,
+      main: {
+        temp: 20.41,
+        feels_like: 20.15,
+        temp_min: 20.41,
+        temp_max: 20.41,
+        pressure: 1012,
+        sea_level: 1012,
+        grnd_level: 1009,
+        humidity: 63,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 95,
+      },
+      wind: {
+        speed: 1.86,
+        deg: 188,
+        gust: 3.41,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-12 09:00:00',
+    },
+    {
+      dt: 1662984000,
+      main: {
+        temp: 24.68,
+        feels_like: 24.38,
+        temp_min: 24.68,
+        temp_max: 24.68,
+        pressure: 1011,
+        sea_level: 1011,
+        grnd_level: 1008,
+        humidity: 45,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 93,
+      },
+      wind: {
+        speed: 2.17,
+        deg: 185,
+        gust: 2.94,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-12 12:00:00',
+    },
+    {
+      dt: 1662994800,
+      main: {
+        temp: 25.7,
+        feels_like: 25.42,
+        temp_min: 25.7,
+        temp_max: 25.7,
+        pressure: 1010,
+        sea_level: 1010,
+        grnd_level: 1007,
+        humidity: 42,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.17,
+        deg: 167,
+        gust: 2.42,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-12 15:00:00',
+    },
+    {
+      dt: 1663005600,
+      main: {
+        temp: 22.72,
+        feels_like: 22.43,
+        temp_min: 22.72,
+        temp_max: 22.72,
+        pressure: 1009,
+        sea_level: 1009,
+        grnd_level: 1006,
+        humidity: 53,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 1.45,
+        deg: 137,
+        gust: 2.45,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-12 18:00:00',
+    },
+    {
+      dt: 1663016400,
+      main: {
+        temp: 21.61,
+        feels_like: 21.21,
+        temp_min: 21.61,
+        temp_max: 21.61,
+        pressure: 1009,
+        sea_level: 1009,
+        grnd_level: 1006,
+        humidity: 53,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 0.96,
+        deg: 106,
+        gust: 1,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-12 21:00:00',
+    },
+    {
+      dt: 1663027200,
+      main: {
+        temp: 20.86,
+        feels_like: 20.44,
+        temp_min: 20.86,
+        temp_max: 20.86,
+        pressure: 1009,
+        sea_level: 1009,
+        grnd_level: 1006,
+        humidity: 55,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 1.61,
+        deg: 75,
+        gust: 3.24,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-13 00:00:00',
+    },
+    {
+      dt: 1663038000,
+      main: {
+        temp: 20.01,
+        feels_like: 19.66,
+        temp_min: 20.01,
+        temp_max: 20.01,
+        pressure: 1008,
+        sea_level: 1008,
+        grnd_level: 1005,
+        humidity: 61,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.64,
+        deg: 49,
+        gust: 6.57,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-13 03:00:00',
+    },
+    {
+      dt: 1663048800,
+      main: {
+        temp: 18.97,
+        feels_like: 18.78,
+        temp_min: 18.97,
+        temp_max: 18.97,
+        pressure: 1008,
+        sea_level: 1008,
+        grnd_level: 1005,
+        humidity: 71,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 3.07,
+        deg: 82,
+        gust: 6.63,
+      },
+      visibility: 10000,
+      pop: 0.33,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-13 06:00:00',
+    },
+    {
+      dt: 1663059600,
+      main: {
+        temp: 17.59,
+        feels_like: 17.65,
+        temp_min: 17.59,
+        temp_max: 17.59,
+        pressure: 1009,
+        sea_level: 1009,
+        grnd_level: 1005,
+        humidity: 86,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 500,
+          main: 'Rain',
+          description: 'light rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.55,
+        deg: 82,
+        gust: 5.03,
+      },
+      visibility: 10000,
+      pop: 0.56,
+      rain: {
+        '3h': 1.3,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-13 09:00:00',
+    },
+    {
+      dt: 1663070400,
+      main: {
+        temp: 17.22,
+        feels_like: 17.43,
+        temp_min: 17.22,
+        temp_max: 17.22,
+        pressure: 1008,
+        sea_level: 1008,
+        grnd_level: 1005,
+        humidity: 93,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 3.1,
+        deg: 74,
+        gust: 6.6,
+      },
+      visibility: 10000,
+      pop: 0.85,
+      rain: {
+        '3h': 3.8,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-13 12:00:00',
+    },
+    {
+      dt: 1663081200,
+      main: {
+        temp: 17.06,
+        feels_like: 17.25,
+        temp_min: 17.06,
+        temp_max: 17.06,
+        pressure: 1007,
+        sea_level: 1007,
+        grnd_level: 1004,
+        humidity: 93,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 500,
+          main: 'Rain',
+          description: 'light rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 3.35,
+        deg: 50,
+        gust: 7.45,
+      },
+      visibility: 10000,
+      pop: 0.42,
+      rain: {
+        '3h': 0.19,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-13 15:00:00',
+    },
+    {
+      dt: 1663092000,
+      main: {
+        temp: 16.55,
+        feels_like: 16.66,
+        temp_min: 16.55,
+        temp_max: 16.55,
+        pressure: 1007,
+        sea_level: 1007,
+        grnd_level: 1003,
+        humidity: 92,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 500,
+          main: 'Rain',
+          description: 'light rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 4.25,
+        deg: 47,
+        gust: 8.81,
+      },
+      visibility: 10000,
+      pop: 0.52,
+      rain: {
+        '3h': 0.25,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-13 18:00:00',
+    },
+    {
+      dt: 1663102800,
+      main: {
+        temp: 15.57,
+        feels_like: 15.64,
+        temp_min: 15.57,
+        temp_max: 15.57,
+        pressure: 1006,
+        sea_level: 1006,
+        grnd_level: 1003,
+        humidity: 94,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 4.57,
+        deg: 37,
+        gust: 10.76,
+      },
+      visibility: 7777,
+      pop: 0.99,
+      rain: {
+        '3h': 4.15,
+      },
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-13 21:00:00',
+    },
+    {
+      dt: 1663113600,
+      main: {
+        temp: 14.52,
+        feels_like: 14.48,
+        temp_min: 14.52,
+        temp_max: 14.52,
+        pressure: 1005,
+        sea_level: 1005,
+        grnd_level: 1002,
+        humidity: 94,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 5,
+        deg: 31,
+        gust: 11.98,
+      },
+      visibility: 6369,
+      pop: 0.99,
+      rain: {
+        '3h': 6.07,
+      },
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-14 00:00:00',
+    },
+    {
+      dt: 1663124400,
+      main: {
+        temp: 13.93,
+        feels_like: 13.86,
+        temp_min: 13.93,
+        temp_max: 13.93,
+        pressure: 1004,
+        sea_level: 1004,
+        grnd_level: 1001,
+        humidity: 95,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10n',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 5.05,
+        deg: 30,
+        gust: 11.64,
+      },
+      visibility: 7850,
+      pop: 0.99,
+      rain: {
+        '3h': 5.83,
+      },
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-14 03:00:00',
+    },
+    {
+      dt: 1663135200,
+      main: {
+        temp: 13.6,
+        feels_like: 13.47,
+        temp_min: 13.6,
+        temp_max: 13.6,
+        pressure: 1004,
+        sea_level: 1004,
+        grnd_level: 1001,
+        humidity: 94,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 4.65,
+        deg: 24,
+        gust: 11.04,
+      },
+      visibility: 6654,
+      pop: 0.99,
+      rain: {
+        '3h': 6.17,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-14 06:00:00',
+    },
+    {
+      dt: 1663146000,
+      main: {
+        temp: 14.08,
+        feels_like: 13.84,
+        temp_min: 14.08,
+        temp_max: 14.08,
+        pressure: 1005,
+        sea_level: 1005,
+        grnd_level: 1002,
+        humidity: 88,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 501,
+          main: 'Rain',
+          description: 'moderate rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 3.6,
+        deg: 20,
+        gust: 9.19,
+      },
+      visibility: 10000,
+      pop: 0.65,
+      rain: {
+        '3h': 4.05,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-14 09:00:00',
+    },
+    {
+      dt: 1663156800,
+      main: {
+        temp: 17.72,
+        feels_like: 17.24,
+        temp_min: 17.72,
+        temp_max: 17.72,
+        pressure: 1007,
+        sea_level: 1007,
+        grnd_level: 1003,
+        humidity: 65,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 500,
+          main: 'Rain',
+          description: 'light rain',
+          icon: '10d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 3.38,
+        deg: 31,
+        gust: 5.09,
+      },
+      visibility: 10000,
+      pop: 0.65,
+      rain: {
+        '3h': 0.3,
+      },
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-14 12:00:00',
+    },
+    {
+      dt: 1663167600,
+      main: {
+        temp: 19.76,
+        feels_like: 19.07,
+        temp_min: 19.76,
+        temp_max: 19.76,
+        pressure: 1006,
+        sea_level: 1006,
+        grnd_level: 1003,
+        humidity: 49,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.99,
+        deg: 11,
+        gust: 4.36,
+      },
+      visibility: 10000,
+      pop: 0.12,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-14 15:00:00',
+    },
+    {
+      dt: 1663178400,
+      main: {
+        temp: 17.58,
+        feels_like: 16.96,
+        temp_min: 17.58,
+        temp_max: 17.58,
+        pressure: 1008,
+        sea_level: 1008,
+        grnd_level: 1005,
+        humidity: 60,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 78,
+      },
+      wind: {
+        speed: 1.63,
+        deg: 356,
+        gust: 2.21,
+      },
+      visibility: 10000,
+      pop: 0.1,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-14 18:00:00',
+    },
+    {
+      dt: 1663189200,
+      main: {
+        temp: 15.8,
+        feels_like: 15.19,
+        temp_min: 15.8,
+        temp_max: 15.8,
+        pressure: 1010,
+        sea_level: 1010,
+        grnd_level: 1007,
+        humidity: 67,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 800,
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01n',
+        },
+      ],
+      clouds: {
+        all: 0,
+      },
+      wind: {
+        speed: 0.76,
+        deg: 327,
+        gust: 1.2,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-14 21:00:00',
+    },
+    {
+      dt: 1663200000,
+      main: {
+        temp: 13.84,
+        feels_like: 13.21,
+        temp_min: 13.84,
+        temp_max: 13.84,
+        pressure: 1011,
+        sea_level: 1011,
+        grnd_level: 1008,
+        humidity: 74,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 800,
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01n',
+        },
+      ],
+      clouds: {
+        all: 3,
+      },
+      wind: {
+        speed: 2.34,
+        deg: 309,
+        gust: 5.81,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-15 00:00:00',
+    },
+    {
+      dt: 1663210800,
+      main: {
+        temp: 12.49,
+        feels_like: 11.99,
+        temp_min: 12.49,
+        temp_max: 12.49,
+        pressure: 1011,
+        sea_level: 1011,
+        grnd_level: 1008,
+        humidity: 84,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04n',
+        },
+      ],
+      clouds: {
+        all: 53,
+      },
+      wind: {
+        speed: 2.35,
+        deg: 304,
+        gust: 4.96,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2022-09-15 03:00:00',
+    },
+    {
+      dt: 1663221600,
+      main: {
+        temp: 11.98,
+        feels_like: 11.48,
+        temp_min: 11.98,
+        temp_max: 11.98,
+        pressure: 1013,
+        sea_level: 1013,
+        grnd_level: 1009,
+        humidity: 86,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 70,
+      },
+      wind: {
+        speed: 1.59,
+        deg: 352,
+        gust: 4.22,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-15 06:00:00',
+    },
+    {
+      dt: 1663232400,
+      main: {
+        temp: 15.33,
+        feels_like: 14.69,
+        temp_min: 15.33,
+        temp_max: 15.33,
+        pressure: 1014,
+        sea_level: 1014,
+        grnd_level: 1011,
+        humidity: 68,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.63,
+        deg: 24,
+        gust: 4.45,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-15 09:00:00',
+    },
+    {
+      dt: 1663243200,
+      main: {
+        temp: 17.26,
+        feels_like: 16.5,
+        temp_min: 17.26,
+        temp_max: 17.26,
+        pressure: 1016,
+        sea_level: 1016,
+        grnd_level: 1013,
+        humidity: 56,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 804,
+          main: 'Clouds',
+          description: 'overcast clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 100,
+      },
+      wind: {
+        speed: 2.77,
+        deg: 12,
+        gust: 3.47,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-15 12:00:00',
+    },
+    {
+      dt: 1663254000,
+      main: {
+        temp: 18.91,
+        feels_like: 18.01,
+        temp_min: 18.91,
+        temp_max: 18.91,
+        pressure: 1016,
+        sea_level: 1016,
+        grnd_level: 1013,
+        humidity: 44,
+        temp_kf: 0,
+      },
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+      clouds: {
+        all: 83,
+      },
+      wind: {
+        speed: 2.05,
+        deg: 357,
+        gust: 2.8,
+      },
+      visibility: 10000,
+      pop: 0,
+      sys: {
+        pod: 'd',
+      },
+      dt_txt: '2022-09-15 15:00:00',
+    },
+  ],
+  city: {
+    id: 2643743,
+    name: 'London',
+    coord: {
+      lat: 51.5085,
+      lon: -0.1257,
+    },
+    country: 'GB',
+    population: 1000000,
+    timezone: 3600,
+    sunrise: 1662787637,
+    sunset: 1662834491,
+  },
+};
