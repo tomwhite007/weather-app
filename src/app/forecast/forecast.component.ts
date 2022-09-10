@@ -1,25 +1,24 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ForecastComponentStateService } from './services/forecast-component-state.service';
+import { ForecastFacade } from './+state/forecast.facade';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ForecastComponentStateService],
 })
 export class ForecastComponent implements OnInit {
   cityPickerOptions = environment.cities;
-  vm$ = this.state.vm$;
+  vm$ = this.facade.forecastTableViewModel$;
 
-  constructor(private state: ForecastComponentStateService) {}
+  constructor(private facade: ForecastFacade) {}
 
   ngOnInit(): void {
-    this.state.init();
+    this.facade.init();
   }
 
   getForecast(city: string) {
-    this.state.getForecast(city);
+    this.facade.getForecast(city);
   }
 }
