@@ -59,7 +59,7 @@ describe('ForecastFacade', () => {
      * The initially generated facade::loadAll() returns empty array
      */
     it('loadAll() should return empty list with loaded == true', async () => {
-      let list = await readFirst(facade.allForecast$);
+      let list = await readFirst(facade.forecast$);
       let isLoaded = await readFirst(facade.loaded$);
 
       expect(list.length).toBe(0);
@@ -67,7 +67,7 @@ describe('ForecastFacade', () => {
 
       facade.init();
 
-      list = await readFirst(facade.allForecast$);
+      list = await readFirst(facade.forecast$);
       isLoaded = await readFirst(facade.loaded$);
 
       expect(list.length).toBe(0);
@@ -78,7 +78,7 @@ describe('ForecastFacade', () => {
      * Use `loadForecastSuccess` to manually update list
      */
     it('allForecast$ should return the loaded list; and loaded flag == true', async () => {
-      let list = await readFirst(facade.allForecast$);
+      let list = await readFirst(facade.forecast$);
       let isLoaded = await readFirst(facade.loaded$);
 
       expect(list.length).toBe(0);
@@ -90,7 +90,7 @@ describe('ForecastFacade', () => {
         })
       );
 
-      list = await readFirst(facade.allForecast$);
+      list = await readFirst(facade.forecast$);
       isLoaded = await readFirst(facade.loaded$);
 
       expect(list.length).toBe(2);

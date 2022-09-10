@@ -1,0 +1,9 @@
+<td>
+  <!-- empty row name cell -->
+</td>
+
+<ng-container *ngFor="let col of columns">
+  <td>
+    <img [src]="iconRow[col].src" [alt]="iconRow[col].alt" />
+  </td>
+</ng-container>

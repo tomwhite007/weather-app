@@ -12,15 +12,13 @@ Assumption: midday forecasts (from three hour forecasts array) are best to descr
 
 Features:
 
-- state - NgRx
-- local state service for container
+- state - NgRx and facade pattern
 - api service
-- adapter service
-- component architecture; container-presenter
+- adapter pattern
+- component architecture; container-presenter pattern
 - reactive programming
 - accessibility
 - responsive design
 - unit tests
 - svg spritesheet
-- spinner
 - error / no forecast messages

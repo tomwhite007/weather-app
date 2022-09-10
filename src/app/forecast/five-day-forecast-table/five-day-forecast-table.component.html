@@ -1,0 +1,28 @@
+<h2>Five day forecast for {{ city }}</h2>
+
+<table aria-label="Five day forecast information">
+  <thead>
+    <tr>
+      <th><!-- empty corner header cell --></th>
+      <th *ngFor="let col of table.dayColumns">
+        <app-forecast-header-cell
+          [heading]="table.headingRow[col]"
+        ></app-forecast-header-cell>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="let row of table.weatherInfoRows; let i = index"
+      appForecastRow
+      [columns]="table.dayColumns"
+      [row]="row"
+    ></tr>
+    <tr
+      forecastIconRow
+      [columns]="table.dayColumns"
+      [iconRow]="table.iconRow"
+    ></tr>
+  </tbody>
+</table>

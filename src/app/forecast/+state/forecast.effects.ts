@@ -15,10 +15,8 @@ export class ForecastEffects {
     this.actions$.pipe(
       ofType(ForecastActions.loadForecast),
       switchMap(({ city }) => this.api.getFiveDayForecast(city)),
-      map((res) => this.adapter.adaptWeatherApiToForecastState(res)),
-      map((forecast: ForecastElement[]) =>
-        ForecastActions.loadForecastSuccess({ forecast })
-      ),
+      map((res) => this.adapter.adaptApiToForecast(res)),
+      map((forecast) => ForecastActions.loadForecastSuccess({ forecast })),
       catchError((err) => of(ForecastActions.loadForecastFailure(err)))
     )
   );

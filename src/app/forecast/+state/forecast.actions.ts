@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ForecastElement } from './forecast.models';
+import { ForecastTableDef } from './forecast.models';
 
 export const initForecast = createAction('[Forecast Page] Init');
 
@@ -10,7 +10,7 @@ export const loadForecast = createAction(
 
 export const loadForecastSuccess = createAction(
   '[Forecast/API] Load Forecast Success',
-  props<{ forecast: ForecastElement[] }>()
+  props<{ forecast: ForecastTableDef }>()
 );
 
 export const loadForecastFailure = createAction(

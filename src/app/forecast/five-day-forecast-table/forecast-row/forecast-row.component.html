@@ -1,0 +1,10 @@
+<td class="heading">
+  <span class="desktop">{{ row.nameDesktop }}</span
+  ><span class="mobile" aria-hidden="true">{{ row.nameMobile }}</span>
+</td>
+
+<ng-container *ngFor="let col of columns">
+  <td>
+    {{ row[col] }}
+  </td>
+</ng-container>

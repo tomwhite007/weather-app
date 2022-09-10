@@ -1,5 +1,8 @@
 .card {
-  padding: 20px 20px 30px 72px;
+  padding: 20px 0px 30px 52px;
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 210px;
 }
 
 .icon-location {
@@ -15,5 +18,6 @@ form {
   select {
     padding: 3px;
     font-weight: 600;
+    width: 170px;
   }
 }

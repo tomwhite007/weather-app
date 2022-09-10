@@ -3,6 +3,7 @@ export interface EnvironmentModel {
     openWeatherMapApiKey: string;
     fiveDayForecastUrl: string;
     ukCountryCode: string;
+    iconUrl: string;
   };
   cities: string[];
   production: boolean;

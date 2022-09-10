@@ -1,16 +1,16 @@
 import { createReducer, on, Action } from '@ngrx/store';
 
 import * as ForecastActions from './forecast.actions';
-import { ForecastElement } from './forecast.models';
+import { ForecastElement, ForecastTableDef } from './forecast.models';
 
 export const FORECAST_FEATURE_KEY = 'forecast';
 
 export interface ForecastState {
   city?: string | null;
-  forecast: ForecastElement[];
+  forecast: ForecastTableDef | null;
   loading: boolean;
   loaded: boolean; // has the Forecast list been loaded
-  error?: string | null; // last known error (if any)
+  error?: unknown; // last known error (if any)
 }
 
 export interface ForecastPartialState {
@@ -18,7 +18,7 @@ export interface ForecastPartialState {
 }
 
 export const initialForecastState: ForecastState = {
-  forecast: [],
+  forecast: null,
   loading: false,
   loaded: false,
 };
@@ -28,7 +28,7 @@ const reducer = createReducer(
   on(ForecastActions.initForecast, (state) => ({
     ...state,
     city: null,
-    forecast: [],
+    forecast: null,
     loading: false,
     loaded: false,
     error: null,
@@ -38,6 +38,7 @@ const reducer = createReducer(
     city,
     loading: true,
     loaded: false,
+    error: null,
   })),
   on(ForecastActions.loadForecastSuccess, (state, { forecast }) => ({
     ...state,

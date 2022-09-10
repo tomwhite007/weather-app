@@ -7,10 +7,20 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { ForecastEffects } from './+state/forecast.effects';
 import * as fromForecast from './+state/forecast.reducer';
+import { FiveDayForecastTableComponent } from './five-day-forecast-table/five-day-forecast-table.component';
 import { SharedUiModule } from '../shared/ui/shared-ui.module';
+import { ForecastHeaderCellComponent } from './five-day-forecast-table/forecast-header-cell/forecast-header-cell.component';
+import { ForecastRowComponent } from './five-day-forecast-table/forecast-row/forecast-row.component';
+import { ForecastIconRowComponent } from './five-day-forecast-table/forecast-icon-row/forecast-icon-row.component';
 
 @NgModule({
-  declarations: [ForecastComponent],
+  declarations: [
+    ForecastComponent,
+    FiveDayForecastTableComponent,
+    ForecastHeaderCellComponent,
+    ForecastRowComponent,
+    ForecastIconRowComponent,
+  ],
   imports: [
     CommonModule,
     ForecastRoutingModule,
