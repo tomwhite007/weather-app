@@ -9,16 +9,20 @@ export interface ForecastElement {
   weatherShortText: string;
 }
 
-export interface ForecastTableRow {
-  type: string;
-  nameDesktop?: string;
-  nameMobile?: string;
-  [key: string]: string | undefined;
+export interface ForecastTableDef {
+  dayColumns: string[];
+  headingRow: {
+    [key: string]: string;
+  };
+  weatherInfoRows: {
+    nameDesktop: string;
+    nameMobile: string;
+  }[];
+  iconRow: { src: string; alt: string };
 }
 
 export interface ForecastTableViewmodel {
   city: string;
-  columns: string[];
-  table: ForecastTableRow[];
+  forecast: ForecastTableDef | null;
   message: string | null;
 }

@@ -5,10 +5,9 @@
 
 <ng-container *ngIf="vm$ | async as vm">
   <app-five-day-forecast-table
-    *ngIf="!vm.message; else message"
-    [columns]="vm.columns"
-    [table]="vm.table"
+    *ngIf="!vm.message && vm.forecast; else message"
     [city]="vm.city"
+    [table]="vm.forecast"
   ></app-five-day-forecast-table>
 
   <ng-template #message>

@@ -3,21 +3,21 @@
 <table aria-label="Five day forecast information">
   <thead>
     <tr>
-      <th *ngFor="let col of columns | filterNonColumns">
+      <th *ngFor="let col of table.dayColumns">
         <app-forecast-header-cell
-          [heading]="heading[col]"
+          [heading]="table.headingRow[col]"
         ></app-forecast-header-cell>
       </th>
     </tr>
   </thead>
 
   <tbody>
-    <tr
+    <!-- <tr
       *ngFor="let row of rows; let i = index"
       appForecastRow
       [row]="row"
       [cols]="columns"
       [rowIdx]="i"
-    ></tr>
+    ></tr> -->
   </tbody>
 </table>

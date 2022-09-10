@@ -1,9 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  ForecastElement,
-  ForecastTableRow,
-  ForecastTableViewmodel,
-} from './forecast.models';
+import { ForecastElement, ForecastTableViewmodel } from './forecast.models';
 import { FORECAST_FEATURE_KEY, ForecastState } from './forecast.reducer';
 
 // Lookup the 'Forecast' feature state managed by NgRx
@@ -30,40 +26,7 @@ export const getForecastTableViewModel = (iconUrl: string) =>
     getForecastState,
     (state: ForecastState): ForecastTableViewmodel => ({
       city: state.city ?? '',
-      columns: [
-        'nameDesktop',
-        'nameMobile',
-        ...state.forecast.map((row) => row.id),
-      ],
-      table: [
-        { type: 'heading', ...convertColumn(state.forecast, 'day') },
-        {
-          type: 'text',
-          nameDesktop: 'Temperature (°C)',
-          nameMobile: '°C',
-          ...convertColumn(state.forecast, 'temperature'),
-        },
-        {
-          type: 'text',
-          nameDesktop: 'Windspeed (mph)',
-          nameMobile: 'Wind mph',
-          ...convertColumn(state.forecast, 'windspeed'),
-        },
-        {
-          type: 'text',
-          nameDesktop: 'Weather',
-          ...convertColumn(state.forecast, 'weatherDescription'),
-        },
-        {
-          type: 'icon',
-          ...Object.assign(
-            {},
-            ...state.forecast.map((row) => ({
-              [row.id]: iconUrl.replace('{icon}', row.weatherIcon),
-            }))
-          ),
-        },
-      ] as ForecastTableRow[],
+      forecast: state.forecast,
       message: state.loading
         ? 'Loading'
         : state.loaded
