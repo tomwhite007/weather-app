@@ -1,17 +1,19 @@
 import { Action } from '@ngrx/store';
 
 import * as ForecastActions from './forecast.actions';
-import { ForecastElement } from './forecast.models';
 import {
   ForecastState,
   initialForecastState,
   forecastReducer,
 } from './forecast.reducer';
+import { mockAdaptedForecastTableDef } from './services/mocks/mock-adapted-forecast-table-def';
 
 describe('Forecast Reducer', () => {
   describe('valid Forecast actions', () => {
     it('loadForecastSuccess should return the list of known Forecast', () => {
-      const action = ForecastActions.loadForecastSuccess({ forecast });
+      const action = ForecastActions.loadForecastSuccess({
+        forecast: mockAdaptedForecastTableDef,
+      });
 
       const result: ForecastState = forecastReducer(
         initialForecastState,
@@ -19,7 +21,7 @@ describe('Forecast Reducer', () => {
       );
 
       expect(result.loaded).toBe(true);
-      expect(result.ids.length).toBe(2);
+      expect(result.forecast).toBe(mockAdaptedForecastTableDef);
     });
   });
 
