@@ -1,4 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ForecastTableDef,
+  WeatherInfoRowElement,
+} from '../../+state/forecast.models';
 
 @Component({
   selector: '[appForecastRow]',
@@ -7,7 +11,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ForecastRowComponent {
-  @Input() row!: unknown;
-  @Input() cols!: string[];
-  @Input() rowIdx!: number;
+  @Input() row!: WeatherInfoRowElement;
+  @Input() columns!: ForecastTableDef['dayColumns'];
 }

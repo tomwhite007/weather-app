@@ -1,18 +1,10 @@
-<!-- <ng-container *ngFor="let col of cols | filterNonColumns">
-  <td *ngIf="col !== 'nameDesktop'; else heading">
-    <ng-container *ngIf="row.type !== 'icon'; else icon">
-      {{ row[col] }}
-    </ng-container>
-  </td>
+<td class="heading">
+  <span class="desktop">{{ row.nameDesktop }}</span
+  ><span class="mobile" aria-hidden="true">{{ row.nameMobile }}</span>
+</td>
 
-  <ng-template #icon>
-    <img [src]="row[col]" />
-  </ng-template>
+<ng-container *ngFor="let col of columns">
+  <td>
+    {{ row[col] }}
+  </td>
 </ng-container>
-
-<ng-template #heading>
-  <td class="heading">
-    <span class="desktop">{{ row.nameDesktop }}</span
-    ><span class="mobile" aria-hidden="true">{{ row.nameMobile }}</span>
-  </td>
-</ng-template> -->

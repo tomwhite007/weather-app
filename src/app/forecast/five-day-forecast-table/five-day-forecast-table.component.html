@@ -3,6 +3,7 @@
 <table aria-label="Five day forecast information">
   <thead>
     <tr>
+      <th><!-- empty corner header cell --></th>
       <th *ngFor="let col of table.dayColumns">
         <app-forecast-header-cell
           [heading]="table.headingRow[col]"
@@ -12,12 +13,16 @@
   </thead>
 
   <tbody>
-    <!-- <tr
-      *ngFor="let row of rows; let i = index"
+    <tr
+      *ngFor="let row of table.weatherInfoRows; let i = index"
       appForecastRow
+      [columns]="table.dayColumns"
       [row]="row"
-      [cols]="columns"
-      [rowIdx]="i"
-    ></tr> -->
+    ></tr>
+    <tr
+      forecastIconRow
+      [columns]="table.dayColumns"
+      [iconRow]="table.iconRow"
+    ></tr>
   </tbody>
 </table>

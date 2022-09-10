@@ -29,6 +29,11 @@ table {
       text-align: left;
       font-weight: bold;
     }
+    &:not(.heading) {
+      @media (max-width: 767px) {
+        font-size: 0.75rem;
+      }
+    }
 
     img {
       width: 50px;

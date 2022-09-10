@@ -14,11 +14,14 @@ export interface ForecastTableDef {
   headingRow: {
     [key: string]: string;
   };
-  weatherInfoRows: {
-    nameDesktop: string;
-    nameMobile: string;
-  }[];
-  iconRow: { src: string; alt: string };
+  weatherInfoRows: WeatherInfoRowElement[];
+  iconRow: { [key: string]: { src: string; alt: string } };
+}
+
+export interface WeatherInfoRowElement {
+  nameDesktop: string;
+  nameMobile: string;
+  [key: string]: string;
 }
 
 export interface ForecastTableViewmodel {
