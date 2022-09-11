@@ -67,7 +67,7 @@ export class ForecastAdapterService {
   ): ForecastTableDef {
     return {
       dayColumns: [...forecast.map((row) => row.id)],
-      headingRow: this.convertColumn(forecast, 'day', {}),
+      headingRow: this.convertColumn(forecast, 'day'),
       weatherInfoRows: this.weatherInfoRows(forecast),
       iconRow: this.iconRow(forecast),
     };
@@ -107,7 +107,7 @@ export class ForecastAdapterService {
   private convertColumn<T = { [key: string]: string }>(
     rows: ForecastElement[],
     key: keyof ForecastElement,
-    baseObj: { [key: string]: string }
+    baseObj: { [key: string]: string } = {}
   ): T {
     return Object.assign(
       baseObj,
