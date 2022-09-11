@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ForecastElement, ForecastTableDef } from '../forecast.models';
+import {
+  ForecastElement,
+  ForecastTableDef,
+  WeatherInfoRowElement,
+} from '../forecast.models';
 import { FiveDayForecastApiResult } from './models/five-day-forecast-api-result';
 
 interface ResponsiveTitles {
@@ -63,21 +67,26 @@ export class ForecastAdapterService {
   ): ForecastTableDef {
     return {
       dayColumns: [...forecast.map((row) => row.id)],
-      headingRow: this.convertColumn(forecast, 'day'),
+      headingRow: this.convertColumn(forecast, 'day', {}),
       weatherInfoRows: this.weatherInfoRows(forecast),
       iconRow: this.iconRow(forecast),
     };
   }
 
-  private weatherInfoRows(forecast: ForecastElement[]) {
+  private weatherInfoRows(
+    forecast: ForecastElement[]
+  ): WeatherInfoRowElement[] {
     const weatherInfoRows = [];
     let key: keyof RowTitleLookup;
     for (key in this.rowTitleLookup) {
       if (Object.prototype.hasOwnProperty.call(this.rowTitleLookup, key)) {
-        weatherInfoRows.push({
-          ...this.rowTitleLookup[key],
-          ...this.convertColumn(forecast, key),
-        });
+        weatherInfoRows.push(
+          this.convertColumn<WeatherInfoRowElement>(
+            forecast,
+            key,
+            this.rowTitleLookup[key]
+          )
+        );
       }
     }
     return weatherInfoRows;
@@ -95,10 +104,14 @@ export class ForecastAdapterService {
     );
   }
 
-  private convertColumn(
+  private convertColumn<T = { [key: string]: string }>(
     rows: ForecastElement[],
-    key: keyof ForecastElement
-  ): { [key: string]: string } {
-    return Object.assign({}, ...rows.map((row) => ({ [row.id]: row[key] })));
+    key: keyof ForecastElement,
+    baseObj: { [key: string]: string }
+  ): T {
+    return Object.assign(
+      baseObj,
+      ...rows.map((row) => ({ [row.id]: row[key] }))
+    );
   }
 }
