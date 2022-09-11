@@ -14,11 +14,13 @@ import {
 } from '@angular/common/http/testing';
 import { mockForecastApiResult } from './services/mocks/mock-forecast-api-result';
 import { HttpClient } from '@angular/common/http';
+import { WeatherApiService } from './services/weather-api.service';
+import { ForecastAdapterService } from './services/forecast-adapter.service';
 
 describe('ForecastEffects', () => {
   let actions: Observable<Action>;
   let effects: ForecastEffects;
-  let mockHttpClient = jasmine.createSpyObj('http', ['get']);
+  const api = jasmine.createSpyObj('api', ['getFiveDayForecast']);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -26,7 +28,8 @@ describe('ForecastEffects', () => {
         ForecastEffects,
         provideMockActions(() => actions),
         provideMockStore(),
-        { provide: HttpClient, useValue: mockHttpClient },
+        ForecastAdapterService,
+        { provide: WeatherApiService, useValue: api },
       ],
     });
 
@@ -35,7 +38,8 @@ describe('ForecastEffects', () => {
 
   describe('loadForecast$', () => {
     it('should load Forecast and convert to view model', () => {
-      mockHttpClient.get.and.returnValue(of(mockForecastApiResult));
+      api.getFiveDayForecast.and.returnValue(of(mockForecastApiResult));
+
       actions = hot('-a-|', {
         a: ForecastActions.loadForecast({ city: 'London' }),
       });
@@ -50,7 +54,10 @@ describe('ForecastEffects', () => {
     });
 
     it('should attempt to load Forecast and then log error', () => {
-      mockHttpClient.get.and.returnValue(throwError(() => new Error('test')));
+      api.getFiveDayForecast.and.returnValue(
+        throwError(() => new Error('test'))
+      );
+
       actions = hot('-a-|', {
         a: ForecastActions.loadForecast({ city: 'London' }),
       });

@@ -9,7 +9,9 @@ describe('ForecastAdapterService', () => {
   let service: ForecastAdapterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [ForecastAdapterService],
+    });
     service = TestBed.inject(ForecastAdapterService);
   });
 

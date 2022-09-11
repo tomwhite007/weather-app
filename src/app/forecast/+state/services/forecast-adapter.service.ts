@@ -14,9 +14,7 @@ interface RowTitleLookup {
   weatherDescription: ResponsiveTitles;
 }
 
-@Injectable({
-  providedIn: 'any',
-})
+@Injectable()
 export class ForecastAdapterService {
   readonly daysOfTheWeek = [
     'Sunday',
