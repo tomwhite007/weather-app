@@ -1,34 +1,30 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule, Store } from '@ngrx/store';
-import { firstValueFrom, Observable } from 'rxjs';
-
+import { firstValueFrom, of, throwError } from 'rxjs';
 import * as ForecastActions from './forecast.actions';
 import { ForecastEffects } from './forecast.effects';
 import { ForecastFacade } from './forecast.facade';
-import { ForecastElement } from './forecast.models';
 import {
   FORECAST_FEATURE_KEY,
   ForecastState,
-  initialForecastState,
   forecastReducer,
 } from './forecast.reducer';
-import * as ForecastSelectors from './forecast.selectors';
+import { ForecastAdapterService } from './services/forecast-adapter.service';
+import { mockAdaptedForecastTableDef } from './services/mocks/mock-adapted-forecast-table-def';
+import { mockForecastApiResult } from './services/mocks/mock-forecast-api-result';
+import { WeatherApiService } from './services/weather-api.service';
 
 interface TestSchema {
   forecast: ForecastState;
 }
 
-const readFirst = (stream$: Observable<any>) => firstValueFrom(stream$);
-
 describe('ForecastFacade', () => {
   let facade: ForecastFacade;
   let store: Store<TestSchema>;
-  const createForecastEntity = (id: string, name = ''): ForecastElement => ({
-    id,
-    name: name || `name-${id}`,
-  });
+  const api = jasmine.createSpyObj('api', ['getFiveDayForecast']);
 
   describe('used in NgModule', () => {
     beforeEach(() => {
@@ -36,8 +32,13 @@ describe('ForecastFacade', () => {
         imports: [
           StoreModule.forFeature(FORECAST_FEATURE_KEY, forecastReducer),
           EffectsModule.forFeature([ForecastEffects]),
+          HttpClientTestingModule,
         ],
-        providers: [ForecastFacade],
+        providers: [
+          ForecastAdapterService,
+          { provide: WeatherApiService, useValue: api },
+          ForecastFacade,
+        ],
       })
       class CustomFeatureModule {}
 
@@ -55,46 +56,69 @@ describe('ForecastFacade', () => {
       facade = TestBed.inject(ForecastFacade);
     });
 
-    /**
-     * The initially generated facade::loadAll() returns empty array
-     */
-    it('loadAll() should return empty list with loaded == true', async () => {
-      let list = await readFirst(facade.forecast$);
-      let isLoaded = await readFirst(facade.loaded$);
+    it('state should flow from empty forecast, to populated', async () => {
+      api.getFiveDayForecast.and.returnValue(of(mockForecastApiResult));
 
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(false);
+      let loaded = await firstValueFrom(facade.loaded$);
+      expect(loaded).toBe(false);
 
-      facade.init();
+      let vm = await firstValueFrom(facade.forecastTableViewModel$);
+      expect(vm).toEqual({
+        city: '',
+        forecast: null,
+        message: 'Select a City above to see a five day forecast',
+      });
 
-      list = await readFirst(facade.forecast$);
-      isLoaded = await readFirst(facade.loaded$);
+      facade.getForecast('London');
 
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(true);
+      vm = await firstValueFrom(facade.forecastTableViewModel$);
+      expect(vm).toEqual({
+        city: 'London',
+        forecast: mockAdaptedForecastTableDef,
+        message: null,
+      });
+
+      loaded = await firstValueFrom(facade.loaded$);
+      expect(loaded).toBe(true);
     });
 
-    /**
-     * Use `loadForecastSuccess` to manually update list
-     */
-    it('allForecast$ should return the loaded list; and loaded flag == true', async () => {
-      let list = await readFirst(facade.forecast$);
-      let isLoaded = await readFirst(facade.loaded$);
-
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(false);
-
+    it('state should reset from populated forecast, to empty', async () => {
       store.dispatch(
         ForecastActions.loadForecastSuccess({
-          forecast: [createForecastEntity('AAA'), createForecastEntity('BBB')],
+          forecast: mockAdaptedForecastTableDef,
         })
       );
 
-      list = await readFirst(facade.forecast$);
-      isLoaded = await readFirst(facade.loaded$);
+      facade.init();
 
-      expect(list.length).toBe(2);
-      expect(isLoaded).toBe(true);
+      const vm = await firstValueFrom(facade.forecastTableViewModel$);
+      expect(vm).toEqual({
+        city: '',
+        forecast: null,
+        message: 'Select a City above to see a five day forecast',
+      });
+    });
+
+    it('state should flow from empty forecast, to error state', async () => {
+      api.getFiveDayForecast.and.returnValue(
+        throwError(() => new Error('test'))
+      );
+
+      let vm = await firstValueFrom(facade.forecastTableViewModel$);
+      expect(vm).toEqual({
+        city: '',
+        forecast: null,
+        message: 'Select a City above to see a five day forecast',
+      });
+
+      facade.getForecast('London');
+
+      vm = await firstValueFrom(facade.forecastTableViewModel$);
+      expect(vm).toEqual({
+        city: 'London',
+        forecast: null,
+        message: 'Oops. There was an error getting the forecast.',
+      });
     });
   });
 });
