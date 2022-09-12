@@ -4,11 +4,11 @@
 ></app-city-picker>
 
 <ng-container *ngIf="vm$ | async as vm">
-  <app-five-day-forecast-table
+  <app-forecast-table
     *ngIf="!vm.message && vm.forecast; else message"
     [city]="vm.city"
     [table]="vm.forecast"
-  ></app-five-day-forecast-table>
+  ></app-forecast-table>
 
   <ng-template #message>
     <div class="message-container">
