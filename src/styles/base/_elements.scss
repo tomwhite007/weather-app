@@ -1,0 +1,32 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--base-rem);
+  color: var(--colour-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+a,
+a:visited,
+a:hover {
+  color: var(--colour-blue-400);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--colour-blue-500);
+}

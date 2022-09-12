@@ -1,3 +1,5 @@
+@import "utils/utils.scss";
+
 :host {
   display: block;
   margin-top: 50px;
@@ -9,7 +11,7 @@ h2 {
 
 table {
   width: 70vw;
-  @media (max-width: 767px) {
+  @include mq(false, $breakpoint-tabletLandscape) {
     width: 90vw;
   }
 
@@ -30,7 +32,7 @@ table {
       font-weight: bold;
     }
     &:not(.heading) {
-      @media (max-width: 767px) {
+      @include mq(false, $breakpoint-tabletLandscape) {
         font-size: 0.75rem;
       }
     }

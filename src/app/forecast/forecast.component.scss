@@ -1,10 +1,12 @@
+@import "utils/utils.scss";
+
 .message-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70vw;
   height: 40vh;
-  @media (max-width: 767px) {
+  @include mq(false, $breakpoint-tabletLandscape) {
     width: 90vw;
   }
 }

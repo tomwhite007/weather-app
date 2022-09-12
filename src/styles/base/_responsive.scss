@@ -1,0 +1,16 @@
+@import "utils/utils.scss";
+
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}
+@include mq(false, $breakpoint-tabletLandscape) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
