@@ -1,8 +1,7 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
+  font-family: var(--font-body);
+  font-size: var(--base-rem);
+  color: var(--colour-dark);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,10 +23,10 @@ p {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color: var(--colour-blue-400);
   text-decoration: none;
 }
 
 a:hover {
-  color: #125699;
+  color: var(--colour-blue-500);
 }
