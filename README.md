@@ -22,3 +22,5 @@ Features:
 - unit tests
 - svg spritesheet
 - error / no forecast messages
+
+Note: In an app this size I wouldn’t ordinarily use NgRx but I’ve used it in this case to demonstrate how it can be wired in using the Facade Pattern. I’ve also used several other practices and patterns for demonstration listed in the features above, that are also more suited to enterprise applications rather than small apps.
