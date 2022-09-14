@@ -15,6 +15,7 @@ Features:
 - state - NgRx and facade pattern
 - api service
 - adapter pattern
+- ChangeDetectionStrategy.OnPush everywhere
 - component architecture; container-presenter pattern
 - reactive programming
 - accessibility
