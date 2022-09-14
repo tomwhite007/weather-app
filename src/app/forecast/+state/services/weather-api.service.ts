@@ -8,7 +8,6 @@ export class WeatherApiService {
   constructor(private http: HttpClient) {}
 
   getFiveDayForecast(city: string) {
-    console.log('api');
     const url = environment.api.fiveDayForecastUrl
       .replace('{apiKey}', environment.api.openWeatherMapApiKey)
       .replace('{countryCode}', environment.api.ukCountryCode)
