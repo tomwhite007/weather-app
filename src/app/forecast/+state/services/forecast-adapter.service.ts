@@ -110,7 +110,7 @@ export class ForecastAdapterService {
     baseObj: { [key: string]: string } = {}
   ): T {
     return Object.assign(
-      baseObj,
+      { ...baseObj },
       ...rows.map((row) => ({ [row.id]: row[key] }))
     );
   }
